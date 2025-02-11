@@ -2,15 +2,22 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        String[] companies={"Audi Deutschland", "Audi Italy", "Audi France"};
+        Company company = Company.AUDI_DE;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-            System.out.println("Test");
+        for (String s : companies){
+            if (s.equals(company.value())) System.out.println("The list have a company Audi Deutschland");
         }
+
+        String auIt = "Audi Italy";
+        for (Company c : Company.values()){
+            if (auIt.equals(c.value())){
+                System.out.println("This company exists: " + c.value());
+            break;}
+            System.out.println("This company does not exist!!!");
+        }
+
+        String comp = company.value();
+        System.out.println(comp);
     }
 }
